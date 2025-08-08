@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Responsive Image Test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;max-width:720px;margin:0 auto;padding:16px}
+    .hero-img{width:clamp(220px,32vw,360px);height:auto;border-radius:12px}
+    @media (max-width:768px){.hero-img{width:100%;max-width:460px}}
+    code{background:#f5f5f5;padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>Responsive Image Test</h1>
+  <p>Open DevTools → Network → filter <code>og_stavickaya_anna_</code> and reload.</p>
+  <picture>
+    <source type="image/webp"
+      srcset="
+        assets/img/og_stavickaya_anna_480.webp 480w,
+        assets/img/og_stavickaya_anna_720.webp 720w,
+        assets/img/og_stavickaya_anna_960.webp 960w,
+        assets/img/og_stavickaya_anna_1200.webp 1200w">
+    <img class="hero-img"
+      src="assets/img/og_stavickaya_anna_960.jpg"
+      srcset="
+        assets/img/og_stavickaya_anna_480.jpg 480w,
+        assets/img/og_stavickaya_anna_720.jpg 720w,
+        assets/img/og_stavickaya_anna_960.jpg 960w,
+        assets/img/og_stavickaya_anna_1200.jpg 1200w"
+      sizes="(max-width: 768px) 100vw, 360px"
+      alt="Анна Ставицкая — тест responsive" loading="eager">
+  </picture>
+</body>
+</html>
